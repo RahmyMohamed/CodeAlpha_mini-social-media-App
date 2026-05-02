@@ -2,6 +2,12 @@
 
 **Pulse** is a lightweight, full-stack social media application built to demonstrate core social networking features. It features a sleek, dark-themed UI and allows users to share thoughts, follow others, and interact through likes and comments.
 
+![preview img](Photo.png)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/)
+
+Live link : https://rahmymohamed.github.io/CodeAlpha_E-Commerce-Store/
+
 ## 🚀 Features
 
 * **User Authentication**: Secure registration and login system[cite: 1, 8].
