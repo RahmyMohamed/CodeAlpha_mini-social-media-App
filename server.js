@@ -293,4 +293,28 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server on http://localhost:${PORT}`));
+const server = app.listen(PORT, () => {
+    console.log(`🚀 Server on http://localhost:${PORT}`);
+});
+
+// Handle EADDRINUSE error - if port is already in use, try next port
+server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+        console.log(`❌ Port ${PORT} is already in use. Trying port ${PORT + 1}...`);
+        const newPort = PORT + 1;
+        server.listen(newPort, () => {
+            console.log(`🚀 Server on http://localhost:${newPort}`);
+        });
+    } else {
+        throw err;
+    }
+});
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+    console.log('📛 SIGTERM received, closing server...');
+    server.close(() => {
+        console.log('✅ Server closed');
+        process.exit(0);
+    });
+});
