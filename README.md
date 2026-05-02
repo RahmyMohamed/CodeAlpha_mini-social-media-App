@@ -55,4 +55,4 @@ Simply open index.html in your preferred web browser.
 ```Bash
 npm run clear
 ```
-### Developed by Mohamed Rahmy.  
+Developed by **Mohamed Rahmy.** 
